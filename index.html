@@ -3,9 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Image Slider...</title>
 </head>
 <body>
-    
+     <h1>Image Slider</h1>
+ 
+  <div class="slider-wrapper">
+ 
+    <!-- Prev Button -->
+    <button class="btn-nav btn-prev" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+ 
+    <!-- Slider Container -->
+    <div class="slider" id="slider">
+ 
+      <!-- Progress Bar -->
+      <div class="progress-bar" id="progressBar"></div>
+ 
+      <!-- Slides Track -->
+      <div class="slides-track" id="slidesTrack">
+ 
+        <div class="slide">
+          <div class="slide-content">
+            <span class="slide-label">Slide 01</span>
+            <h2 class="slide-title">Midnight Depths</h2>
+          </div>
+          <span class="slide-number">01</span>
+        </div>
+ 
+        <div class="slide">
+          <div class="slide-content">
+            <span class="slide-label">Slide 02</span>
+            <h2 class="slide-title">Emerald Horizon</h2>
+          </div>
+          <span class="slide-number">02</span>
+        </div>
+ 
+        <div class="slide">
+          <div class="slide-content">
+            <span class="slide-label">Slide 03</span>
+            <h2 class="slide-title">Dusk Gradient</h2>
+          </div>
+          <span class="slide-number">03</span>
+        </div>
+ 
+        <div class="slide">
+          <div class="slide-content">
+            <span class="slide-label">Slide 04</span>
+            <h2 class="slide-title">Arctic Steel</h2>
+          </div>
+          <span class="slide-number">04</span>
+        </div>
+ 
+        <div class="slide">
+          <div class="slide-content">
+            <span class="slide-label">Slide 05</span>
+            <h2 class="slide-title">Violet Dusk</h2>
+          </div>
+          <span class="slide-number">05</span>
+        </div>
+ 
+      </div><!-- /.slides-track -->
+    </div><!-- /.slider -->
+ 
+    <!-- Next Button -->
+    <button class="btn-nav btn-next" aria-label="Next slide">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+ 
+  </div><!-- /.slider-wrapper -->
+ 
+  <!-- Dots -->
+  <div class="dots" id="dots"></div>
+ 
+  <!-- Bottom Controls -->
+  <div class="controls-bottom">
+    <span id="slideCounter">1 / 5</span>
+    <button class="btn-pause" id="btnPause">Pause</button>
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>
