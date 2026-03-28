@@ -59,7 +59,7 @@
       clearAnimationFrame();
     }
  
-    // ── Progress Bar Animation ─────────────────────────────────────
+    // Progress Bar Animation 
     let rafId = null;
  
     function clearAnimationFrame() {
