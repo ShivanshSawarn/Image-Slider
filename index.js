@@ -3,20 +3,20 @@
     const TOTAL      = 5;      // total number of slides
  
     // ─ DOM References ─
-    const track       = document.getElementById('slidesTrack');
-    const dotsWrap    = document.getElementById('dots');
-    const counter     = document.getElementById('slideCounter');
-    const progressBar = document.getElementById('progressBar');
-    const btnPause    = document.getElementById('btnPause');
-    const btnPrev     = document.querySelector('.btn-prev');
-    const btnNext     = document.querySelector('.btn-next');
+    const track= document.getElementById('slidesTrack');
+    const dotsWrap= document.getElementById('dots');
+    const counter= document.getElementById('slideCounter');
+    const progressBar= document.getElementById('progressBar');
+    const btnPause= document.getElementById('btnPause');
+    const btnPrev= document.querySelector('.btn-prev');
+    const btnNext= document.querySelector('.btn-next');
  
     // ─ State ─
-    let current    = 0;
-    let isPlaying  = true;
-    let timer      = null;
-    let progTimer  = null;
-    let progStart  = null;
+    let current= 0;
+    let isPlaying= true;
+    let timer  = null;
+    let progTimer= null;
+    let progStart = null;
  
     // ─ Build Dots ─
     for (let i = 0; i < TOTAL; i++) {
@@ -79,7 +79,7 @@
  
     function animateProgress(now) {
       const elapsed  = now - progStart;
-      const pct      = Math.min((elapsed / INTERVAL) * 100, 100);
+      const pct = Math.min((elapsed / INTERVAL) * 100, 100);
       progressBar.style.transition = 'none';
       progressBar.style.width = pct + '%';
       if (pct < 100) {
@@ -116,7 +116,7 @@
  
     // ─ Touch / Swipe Support ─
     let touchStartX = 0;
-    const sliderEl  = document.getElementById('slider');
+    const sliderEl= document.getElementById('slider');
  
     sliderEl.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
