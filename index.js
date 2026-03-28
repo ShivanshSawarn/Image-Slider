@@ -1,8 +1,8 @@
- // ── Configuration ──────────────────────────────────────────────
+ // ─ Configuration ─
     const INTERVAL   = 3500;   // ms between auto-slides
     const TOTAL      = 5;      // total number of slides
  
-    // ── DOM References ─────────────────────────────────────────────
+    // ─ DOM References ─
     const track       = document.getElementById('slidesTrack');
     const dotsWrap    = document.getElementById('dots');
     const counter     = document.getElementById('slideCounter');
@@ -11,14 +11,14 @@
     const btnPrev     = document.querySelector('.btn-prev');
     const btnNext     = document.querySelector('.btn-next');
  
-    // ── State ──────────────────────────────────────────────────────
+    // ─ State ─
     let current    = 0;
     let isPlaying  = true;
     let timer      = null;
     let progTimer  = null;
     let progStart  = null;
  
-    // ── Build Dots ─────────────────────────────────────────────────
+    // ─ Build Dots ─
     for (let i = 0; i < TOTAL; i++) {
       const dot = document.createElement('button');
       dot.classList.add('dot');
@@ -30,7 +30,7 @@
  
     const dots = () => dotsWrap.querySelectorAll('.dot');
  
-    // ── Core: Go To Slide ──────────────────────────────────────────
+    // ─ Core: Go To Slide ─
     function goTo(index) {
       current = (index + TOTAL) % TOTAL;
       track.style.transform = `translateX(-${current * 100}%)`;
@@ -48,7 +48,7 @@
     function next() { goTo(current + 1); }
     function prev() { goTo(current - 1); }
  
-    // ── Auto-Slide Timer ───────────────────────────────────────────
+    // ─ Auto-Slide Timer ─
     function startTimer() {
       clearInterval(timer);
       timer = setInterval(next, INTERVAL);
@@ -87,7 +87,7 @@
       }
     }
  
-    // ── Pause / Play ───────────────────────────────────────────────
+    // ─ Pause / Play ─
     function pause() {
       isPlaying = false;
       stopTimer();
@@ -103,18 +103,18 @@
  
     btnPause.addEventListener('click', () => isPlaying ? pause() : play());
  
-    // ── Navigation Buttons ─────────────────────────────────────────
+    // ─ Navigation Buttons ─
     btnNext.addEventListener('click', () => { goTo(current + 1); if (isPlaying) restartProgress(); });
     btnPrev.addEventListener('click', () => { goTo(current - 1); if (isPlaying) restartProgress(); });
  
-    // ── Keyboard Navigation ────────────────────────────────────────
+    // ─ Keyboard Navigation ─
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') btnNext.click();
       if (e.key === 'ArrowLeft')  btnPrev.click();
       if (e.key === ' ')          btnPause.click();
     });
  
-    // ── Touch / Swipe Support ──────────────────────────────────────
+    // ─ Touch / Swipe Support ─
     let touchStartX = 0;
     const sliderEl  = document.getElementById('slider');
  
@@ -129,5 +129,5 @@
       }
     }, { passive: true });
  
-    // ── Init ───────────────────────────────────────────────────────
+    // ─ Init ─
     restartProgress();
